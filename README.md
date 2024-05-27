@@ -8,6 +8,7 @@ A node-based programming for Framer
 
 
 ## Framer Nodes Hook
+The Nodes are rely on two major hooks : `useNodeInput` and `useNodeOutput`. These hook allow you to control the input and output of your node.
 
 ## useNodeInput
 You can read the Node's input by using the `useNodeInput` hook. It accept as parameter the Children from the current component. If the Children are Nodes, it retrieve the value from it and send it back as an array with all input values. 
@@ -30,15 +31,16 @@ const [output, setOutput, deleteOutput] = useNodeInput(initialOutputValue);
 
 
 ### Regular Case
-In most case, you can use the Node template to create simple Node that doesn't require component lifecycle. 
+In most case, you can use the Node template to create simple Node that doesn't require complexe component lifecycle. Most of caluculation Node are using the template.
 
 ```js
 import { NodeTemplate, NodeControls } from "https://framer.com/m/UseNode-U5fM.js"
 
+const transform = (inputValues)=>{
+      /* Your Code */
+}
+
 export default function YourNode(props) {
-      const transform = (inputValues)=>{
-            /* Your Code */
-      }
       return <NodeTemplate {...props} label="YourNode" transform={transform} />
 }
 
@@ -57,10 +59,17 @@ const transform = (inputs)=>{
 export default function YourNode(props) {
       const [inputValues] = useNodeInput(input);
       const [outputValue, setOutputValue, deleteOutputValue] = useNodeOutput(
+            transform(inputValues)
+      )
    
 
       useEffect(()=>{
-            return () => { deleteOutput() }
+            //You can place here
+            setOutputValue(/* Any Value*/)
+            return () => {
+                  //When the component is unmounted, the output is removed from the Array.
+                  deleteOutput()
+            }
       })
       return <Node {...props} label="YourNode" transform={transform} />
 }
