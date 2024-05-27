@@ -24,8 +24,8 @@ export default function YourNode({input}) {
 The `useNodeOutput` allow you to update the Node Output. 
 
 ```js
-import { useNodeutput } from "https://framer.com/m/UseNode-U5fM.js"
-const [output, setOutput, deleteOutput] = useNodeInput(initialOutputValue);
+import { useNodeOutput } from "https://framer.com/m/UseNode-U5fM.js"
+const [output, setOutput, deleteOutput] = useNodeOutput(initialOutputValue);
 ```
 
 ## Create Your Node
