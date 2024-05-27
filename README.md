@@ -74,7 +74,7 @@ export default function YourNode(props) {
    
 
       useEffect(()=>{
-            //You can place here
+            //You can place here transformation that you would like to perform once the component is mounted. For example, a fetch API.
             setOutputValue(/* Any Value*/)
             return () => {
                   //When the component is unmounted, the output is removed from the Array.
