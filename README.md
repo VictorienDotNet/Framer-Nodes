@@ -1,5 +1,5 @@
 # Framer-Nodes
-A node-based programming for Framer
+A node-based programming for Framer. Check the [website](https://nodes.framer.website/) for futher details. 
 
 
 - NodeTemplate
