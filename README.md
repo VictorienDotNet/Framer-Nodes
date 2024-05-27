@@ -70,7 +70,7 @@ export default function YourNode(props) {
                   //When the component is unmounted, the output is removed from the Array.
                   deleteOutput()
             }
-      })
+      }, [])
       return <Node {...props} label="YourNode" transform={transform} />
 }
 
