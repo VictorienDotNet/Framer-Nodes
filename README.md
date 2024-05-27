@@ -15,6 +15,7 @@ You can read the Node's input by using the `useNodeInput` hook. It accept as par
 
 ```js
 import { useNodeInput } from "https://framer.com/m/UseNode-U5fM.js"
+
 export default function YourNode({input}) {
       const [inputValues] = useNodeInput(input);
 }
