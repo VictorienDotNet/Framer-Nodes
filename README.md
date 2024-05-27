@@ -28,7 +28,9 @@ import { useNodeutput } from "https://framer.com/m/UseNode-U5fM.js"
 const [output, setOutput, deleteOutput] = useNodeInput(initialOutputValue);
 ```
 
-## Scenario
+## Create Your Node
+
+There is different type of Node : Input, Output, Transform. 
 
 
 ### Regular Case
