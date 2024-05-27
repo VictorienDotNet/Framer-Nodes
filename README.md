@@ -35,17 +35,25 @@ const [output, setOutput, deleteOutput] = useNodeInput(initialOutputValue);
 In most cof the case, you can use the Node template to create simple Node that doesn't require complexe component lifecycle. Most of Transofrmation Nodes are using the template.
 
 ```js
-import { NodeTemplate, NodeControls } from "https://framer.com/m/UseNode-U5fM.js"
+import { NodeTemplate } from "https://framer.com/m/UseNode-U5fM.js"
 
 const transform = (inputValues)=>{
-      /* Your Code */
+    /* Your Code */
 }
 
 export default function YourNode(props) {
-      return <NodeTemplate {...props} label="YourNode" transform={transform} />
+    return <NodeTemplate {...props} label="YourNode" transform={transform} />
 }
 
-addPropertyControls(YourNode, NodeControls)
+addPropertyControls(YourNode, {
+    input: {
+        type: ControlType.Array,
+        control: {
+            type: ControlType.ComponentInstance,
+        },
+    }
+})
+
 ```
 [See Example](/examples/Sum.tsx)
 
@@ -76,5 +84,14 @@ export default function YourNode(props) {
       return <Node {...props} label="YourNode" transform={transform} />
 }
 
-addPropertyControls(YourNode, NodeControls)
+addPropertyControls(YourNode, {
+    input: {
+        type: ControlType.Array,
+        control: {
+            type: ControlType.ComponentInstance,
+        },
+    }
+})
 ```
+
+[See Example](/examples/Dataset.tsx)
