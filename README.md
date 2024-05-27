@@ -47,7 +47,7 @@ export default function YourNode(props) {
 
 addPropertyControls(YourNode, NodeControls)
 ```
-(See Example)[/examples/Sum.tsx]
+[See Example](/examples/Sum.tsx)
 
 ### Advanced Case
 
